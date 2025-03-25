@@ -1,0 +1,126 @@
+📌 Análise do Projeto - Sistema de Gerenciamento de Tarefas
+📖 Descrição do Projeto
+
+O sistema será uma API RESTful que permite que usuários gerenciem suas tarefas. 
+Ele contará com funcionalidades básicas, como criação, atualização, listagem e exclusão 
+de tarefas!!
+
+--------------------------------------------------------------------------------------
+
+🛠️ Tecnologias Utilizadas
+
+    Linguagem: Java
+
+    Framework: Spring Boot
+
+    Banco de Dados: PostgreSQL
+
+    ORM: Hibernate/JPA
+
+    Autenticação: JWT
+
+    Documentação: Swagger
+
+    Ferramentas: Maven, Docker, Git
+    
+--------------------------------------------------------------------------------------
+    
+📌 Planejamento e Execução do Projeto
+
+🚀 1° DIA - PLANEJAMENTO E CONFIGURAÇÃO INICIAL
+
+1️⃣ Definir o escopo do sistema (CRUD de tarefas, login de usuário, etc.)
+2️⃣ Criar um repositório no GitHub para armazenar o código
+3️⃣ Criar o projeto Spring Boot usando Spring Initializr
+4️⃣ Configurar dependências do projeto no pom.xml (Spring Web, JPA, PostgreSQL, etc.)
+5️⃣ Configurar o banco de dados no application.yml
+6️⃣ Criar a estrutura do projeto (pacotes: controller, service, repository, model, dto)
+7️⃣ Criar a entidade Tarefa com atributos (id, titulo, descricao, status, dataCriacao)
+8️⃣ Mapear a entidade Tarefa com JPA
+9️⃣ Criar a entidade Usuario para gerenciar os usuários
+🔟 Configurar um serviço de conexão com o banco para garantir a persistência dos dados
+1️⃣1️⃣ Criar a interface TarefaRepository e extender JpaRepository
+1️⃣2️⃣ Criar a interface UsuarioRepository e extender JpaRepository
+1️⃣3️⃣ Implementar o serviço TarefaService para regras de negócio
+1️⃣4️⃣ Implementar o serviço UsuarioService para autenticação e manipulação de usuários
+1️⃣5️⃣ Criar um DTO (TarefaDTO) para transferir dados entre camadas
+1️⃣6️⃣ Criar um DTO (UsuarioDTO) para dados do usuário
+1️⃣7️⃣ Configurar o Swagger para documentar os endpoints
+1️⃣8️⃣ Configurar o Docker para subir o banco PostgreSQL
+1️⃣9️⃣ Testar a conexão do banco com o projeto
+2️⃣0️⃣ Subir a aplicação localmente e garantir que tudo está funcionando
+
+--------------------------------------------------------------------------------------
+
+🛠️ 2° DIA - IMPLEMENTAÇÃO DOS ENDPOINTS
+
+1️⃣ Criar o TarefaController para expor a API REST
+2️⃣ Criar o endpoint POST /tarefas para cadastrar novas tarefas
+3️⃣ Criar o endpoint GET /tarefas para listar todas as tarefas
+4️⃣ Criar o endpoint GET /tarefas/{id} para buscar uma tarefa por ID
+5️⃣ Criar o endpoint PUT /tarefas/{id} para atualizar uma tarefa
+6️⃣ Criar o endpoint DELETE /tarefas/{id} para excluir uma tarefa
+7️⃣ Criar o UsuarioController para gerenciar usuários
+8️⃣ Criar o endpoint POST /usuarios para cadastro de usuários
+9️⃣ Criar o endpoint POST /login para autenticação de usuários
+🔟 Implementar ExceptionHandler para tratamento de erros personalizados
+1️⃣1️⃣ Implementar validação de dados (ex: título da tarefa não pode ser vazio)
+1️⃣2️⃣ Adicionar logs no sistema para facilitar a depuração
+1️⃣3️⃣ Configurar paginação no GET /tarefas para melhor desempenho
+1️⃣4️⃣ Configurar ordenação no GET /tarefas para organizar por data de criação
+1️⃣5️⃣ Configurar o Swagger para os endpoints com descrições detalhadas
+1️⃣6️⃣ Testar os endpoints com Postman/Insomnia
+1️⃣7️⃣ Implementar testes unitários para os serviços (TarefaService, UsuarioService)
+1️⃣8️⃣ Implementar testes de integração para os endpoints REST
+1️⃣9️⃣ Versionar as mudanças no GitHub com commits organizados
+2️⃣0️⃣ Fazer ajustes e correções nos endpoints conforme necessário
+
+--------------------------------------------------------------------------------------
+
+🔒 3° DIA - SEGURANÇA E AUTENTICAÇÃO
+
+1️⃣ Configurar segurança na API com Spring Security
+2️⃣ Implementar autenticação via JWT
+3️⃣ Criar um filtro para interceptar requisições e validar tokens
+4️⃣ Configurar regras de acesso aos endpoints (ex: apenas usuários autenticados podem criar tarefas)
+5️⃣ Implementar um serviço de geração e validação de tokens JWT
+6️⃣ Adicionar um middleware para capturar tentativas de acesso inválidas
+7️⃣ Criar um endpoint GET /perfil para retornar os dados do usuário autenticado
+8️⃣ Adicionar refresh token para manter a sessão ativa por mais tempo
+9️⃣ Configurar senhas criptografadas com BCrypt no banco
+🔟 Implementar logs de segurança para capturar acessos suspeitos
+1️⃣1️⃣ Proteger endpoints críticos contra ataques comuns (ex: SQL Injection, XSS)
+1️⃣2️⃣ Configurar CORS para permitir requisições externas
+1️⃣3️⃣ Testar a autenticação com Postman/Insomnia
+1️⃣4️⃣ Criar um serviço de recuperação de senha via e-mail
+1️⃣5️⃣ Adicionar um sistema de permissões baseado em roles (ROLE_ADMIN, ROLE_USER)
+1️⃣6️⃣ Configurar rate limiting para evitar ataques de força bruta
+1️⃣7️⃣ Escrever testes unitários para segurança
+1️⃣8️⃣ Implementar testes de integração para autenticação
+1️⃣9️⃣ Testar login/logout e verificar persistência dos tokens
+2️⃣0️⃣ Fazer ajustes finais e refatoração do código
+
+--------------------------------------------------------------------------------------
+
+📦 4° DIA - DEPLOY, OTIMIZAÇÃO E FINALIZAÇÃO
+
+1️⃣ Criar um Dockerfile para a aplicação
+2️⃣ Criar um docker-compose.yml para subir API e banco de dados juntos
+3️⃣ Configurar um banco de dados PostgreSQL na nuvem
+4️⃣ Alterar configurações do banco local para o banco na nuvem
+5️⃣ Criar um ambiente de produção no servidor
+6️⃣ Fazer deploy da API em um servidor (Heroku, Railway, AWS, etc.)
+7️⃣ Testar a API publicada
+8️⃣ Configurar logs em produção
+9️⃣ Otimizar queries e melhorar desempenho
+🔟 Fazer testes de carga para avaliar a performance
+1️⃣1️⃣ Adicionar monitoramento com Prometheus/Grafana
+1️⃣2️⃣ Implementar um sistema de notificações (ex: WebSockets, Firebase)
+1️⃣3️⃣ Escrever documentação final da API
+1️⃣4️⃣ Criar um README.md detalhado para o projeto
+1️⃣5️⃣ Compartilhar a API para feedbacks
+1️⃣6️⃣ Refatorar código conforme necessidade
+1️⃣7️⃣ Adicionar novos recursos no backlog para evoluções futuras
+1️⃣8️⃣ Publicar o código no GitHub e organizar branches
+1️⃣9️⃣ Gerar um relatório final do projeto
+2️⃣0️⃣ Finalizar o desenvolvimento e comemorar o sucesso! 🎉
