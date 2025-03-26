@@ -1,7 +1,7 @@
 package com.crud.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
@@ -24,7 +24,7 @@ public class Tarefa implements Serializable {
 	private String titulo;
 	private String descricao;
 	private String status;
-	private Date dataCriacao;
+	private LocalDateTime dataCriacao;
 
 	public Long getId() {
 		return id;
@@ -58,12 +58,12 @@ public class Tarefa implements Serializable {
 		this.status = status;
 	}
 
-	public Date getDataCriacao() {
+	public LocalDateTime getDataCriacao() {
 		return dataCriacao;
 	}
 
-	public void setDataCriacao(Date dataCriacao) {
-		this.dataCriacao = dataCriacao;
+	public void setDataCriacao(LocalDateTime localDateTime) {
+		this.dataCriacao = localDateTime;
 	}
 
 	@Override
